@@ -28,7 +28,7 @@ var app = {
 		});
     },
 	
-	userGetPicture: function() {
+	useGetPicture: function() {
 		navigator.camera.getPicture(
 			app.onPhotoSuccess,
 			app.onFail,
