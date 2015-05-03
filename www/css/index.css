@@ -7,17 +7,11 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;	
     font-family:Segoe UI,CustomSegoeUI,Arial;
     font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    width:100%;
+	margin:0;
+	padding:0;
+
 }
 
 .orangebg{
@@ -46,7 +40,7 @@ body {
 
 .header{
 	height:75px;
-
+	  box-shadow: 0px 2px 5px #3F3F3F;
 
 
 }
@@ -56,11 +50,14 @@ body {
 }
 
 .menu {
+
   height: 75px;
+box-shadow:0px -2px 5px #3F3F3F;  
   position: absolute;
   bottom: 0;
   width: 100%;
 }
+
 
 .buttons{
   width: 100%;
@@ -81,6 +78,18 @@ color: #f8e8a3;
   background-color: #e06826;
  
   
+
+}
+
+.main{
+
+  background-color: #f8e8a3;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
 
 }
 
