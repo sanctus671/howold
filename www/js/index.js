@@ -66,6 +66,7 @@ var app = {
 	onPhotoSuccess: function(imageURI) {
 		var image = document.getElementById('image');
 		image.src = imageURI;
+		$('.box').remove();
 		var options = new FileUploadOptions();
 		options.fileKey="fileToUpload";
 		options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -101,7 +102,7 @@ var app = {
 				data: '{url:"http://taylorhamling.com/HowOld/' + response.url + '"}'
 			})
 			.done(function(data) {
-				console.log(data);
+
 				var imageHeight = document.getElementById('image').naturalHeight;
 				var imageWidth = document.getElementById('image').naturalWidth
 				var scaledHeight = $('.main').height();
@@ -109,6 +110,10 @@ var app = {
 				
 				var scaleHeightFactor = scaledHeight/imageHeight;
 				var scaleWidthFactor = scaledWidth/imageWidth;	
+				
+				if (data.length < 1){
+					alert("No faces detected");
+				}
 				
 				for (var index in data){
 					alert("You are a " + data[index]["attributes"]["gender"] + " who is " + data[index]["attributes"]["age"] + " years old");
@@ -118,11 +123,20 @@ var app = {
 					'</div>');
 
 				}
-				//update background image
-				//create squares on image
+				//clean up
+				$.ajax({
+					url: 'http://www.taylorhamling.com/HowOld/delete.php',
+					type: 'POST',
+					data: {url:response.url}
+				});
 			})
 			.fail(function() {
-				//error
+				//still clean up
+				$.ajax({
+					url: 'http://www.taylorhamling.com/HowOld/delete.php',
+					type: 'POST',
+					data: {url:response.url}
+				});
 			});
 		});			
 		
