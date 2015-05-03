@@ -55,27 +55,22 @@ var app = {
 		options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
 		options.mimeType="image/jpeg";
 
-		var params = new Object();
-		params.value1 = "test";
-		params.value2 = "param";
-
 		options.params = params;
-		options.chunkedMode = false;
 
 		var ft = new FileTransfer();
-		ft.upload(imageURI, "http://www.taylorhamling.com/script.php", app.win,  app.fail, options);		
+		ft.upload(imageURI, encodeURI("http://www.taylorhamling.com/script.php"), app.win,  app.fail, options);		
 		
 		
 	
 	},
 	
 	win: function(r){
-		alert(r.response);
+		alert("Response =" + r.response);
 	
 	},
 	
 	fail: function(error){
-		alert(error.code);
+		alert("An error has occurred: Code = " + error.code);
 	
 	},
 	
@@ -88,7 +83,6 @@ var app = {
 	sendImage: function(){
 			var files = document.getElementById('fileToUpload').files;
 			var formData = new FormData();
-
 			var file = files[0];
 
 
