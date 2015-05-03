@@ -1,5 +1,3 @@
-var pictureSource;   // picture source
-var destinationType; // sets the format of returned value
 
 var app = {
 
@@ -19,18 +17,52 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-	
-		pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;	
-		//HANDLES GETTING IMAGES FROM THE CAMERA PLUGIN
 		
-	
+		app.useGetPicture();
 	
 	
 		//HANDLES UPLOADING AND UPDATED BACKGROUND SCREEN
 		$('#uploadImageForm').on('submit',function(e){
 			e.preventDefault();
+			this.sendImage();
+		});
+    },
+	
+	userGetPicture: function() {
+		navigator.camera.getPicture(
+			app.onPhotoSuccess,
+			app.onFail,
+			{
+				quality: 75,
+				destinationType: Camera.DestinationType.DATA_URL,
+				sourceType: Camera.PictureSourceType.Camera,
+				encodingType: Camera.EncodingType.JPEG,
+				correctOrientation: true
 			
+			
+			}
+		
+		
+		)
+	
+	},
+	
+	onPhotoSuccess: function(imageData) {
+		var image = document.getElementById('image');
+		image.src = "data:image/jpeg;base64," + imageData;
+	
+	},
+	
+	onFail: function(message){
+		alert('Failed: ' + message);
+		
+	)
+	
+	
+
+
+	
+	sendImage: function(){
 			var files = document.getElementById('fileToUpload').files;
 			var formData = new FormData();
 
@@ -84,45 +116,11 @@ var app = {
 				}
 			};	
 
-			xhr.send(formData);
-
-
-		});
-    },
-
-	capturePhoto: function() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50, allowEdit: true, destinationType: destinationType.DATA_URL });
-    },
-
-
-	getPhoto: function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, destinationType: destinationType.FILE_URI, sourceType: source });
-    },
-
-	onPhotoURISuccess: function (imageURI) {
-      // Uncomment to view the image file URI
-      // console.log(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The in-line CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    },	
+			xhr.send(formData);	
 	
-	onFail: function(message) {
-      alert('Failed because: ' + message);
-    }	
-	
+	}
+
+
 	
     
 };
