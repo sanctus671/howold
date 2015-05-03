@@ -73,7 +73,7 @@ var app = {
 				url: 'https://api.projectoxford.ai/face/v0/detections?' + $.param(params),
 				type: 'POST',
 				contentType: 'application/json',
-				data: '{url:"http://taylorhamling.com/HowOld/' + response.url + '"}'
+				data: '{url:"http://taylorhamling.com/HowOld/' + r.url + '"}'
 			})
 			.done(function(data) {
 				console.log(data);
