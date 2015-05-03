@@ -56,7 +56,7 @@ var app = {
 	onFail: function(message){
 		alert('Failed: ' + message);
 		
-	)
+	},
 	
 	
 
