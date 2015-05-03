@@ -37,7 +37,7 @@ var app = {
 	useGetFile: function() {
 		navigator.camera.getPicture(
 			app.onPhotoSuccess,
-			function(message){alert('Failed: ' + message);},
+			function(message){//alert('Failed: ' + message);},
 			{
 				quality: 75,
 				destinationType: Camera.DestinationType.FILE_URI,
@@ -55,7 +55,7 @@ var app = {
 	useGetPicture: function() {
 		navigator.camera.getPicture(
 			app.onPhotoSuccess,
-			function(message){alert('Failed: ' + message);},
+			function(message){//alert('Failed: ' + message);},
 			{
 				quality: 75,
 				destinationType: Camera.DestinationType.FILE_URI,
