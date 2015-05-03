@@ -1,0 +1,13 @@
+<widget id="com.myliftingpal" version="2.1.0">
+        <name>How Old</name>
+        <description>
+            How Old Do I Look?
+        </description>
+        <author email="taylor@taylorhamling.com" href="http://www.taylorhamling.com">
+            Taylor Hamling
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+		<preference name="permissions" value="none" />
+        <icon src="images/icon.png" />
+    </widget>
