@@ -60,7 +60,6 @@ var app = {
 		var response = $.parseJSON(r.response);
 		
 		//send away to microsoft
-		alert('"http://taylorhamling.com/HowOld/' + response.url + '"');
 		$(function() {
 			var params = {
 				// Specify your subscription key
@@ -80,9 +79,21 @@ var app = {
 			})
 			.done(function(data) {
 				console.log(data);
+				var imageHeight = document.getElementById('image').naturalHeight;
+				var imageWidth = document.getElementById('image').naturalWidth
+				var scaledHeight = $('.main').height();
+				var scaledWidth = $('.main').width();
+				
+				var scaleHeightFactor = scaledHeight/imageHeight;
+				var scaleWidthFactor = scaledWidth/imageWidth;	
+				
 				for (var index in data){
 					alert("You are a " + data[index]["attributes"]["gender"] + " who is " + data[index]["attributes"]["age"] + " years old");
-					$('body').append('<div class="box" style="width:' + data[index]["faceRectangle"]["width"] + 'px; height:' + data[index]["faceRectangle"]["height"] + 'px; top:' + data[index]["faceRectangle"]["top"] + 'px; left:' + data[index]["faceRectangle"]["left"] + 'px;"></div>')
+					$('body').append('<div class="box" style="width:' + data[index]["faceRectangle"]["width"]*scaleWidthFactor + 'px; height:' + data[index]["faceRectangle"]["height"]*scaleHeightFactor + 'px; top:' + data[index]["faceRectangle"]["top"]*scaleHeightFactor + 'px; left:' + data[index]["faceRectangle"]["left"]*scaleWidthFactor + 'px;">' +
+					'<i class="attributes fa fa-' + data[index]["attributes"]["gender"] + '"></i>' +
+					'<div class="attributes age">' + data[index]["attributes"]["age"] + '</div>' +
+					'</div>');
+
 				}
 				//update background image
 				//create squares on image

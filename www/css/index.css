@@ -104,6 +104,17 @@ color: #f8e8a3;
 
 }
 
+.attributes{
+  font-size: 30px;
+  color: #f8e8a3;
+  background-color: #e06826;
+  padding: 5px;
+  border-radius: 2px;
+  margin-left: 5px;
+  margin-top: 5px;	
+  
+}
+
 .app {	
 
 
