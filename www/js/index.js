@@ -22,7 +22,16 @@ var app = {
     },
 
 	sharePicture: function() {
-		alert('Function not implemented');
+		navigator.screenshot.save(function(error,res){
+		if(error){
+			alert("There was an error");
+		}else{
+			alert(res.filePath);
+			window.plugins.socialsharing.share('Shared from the How Old app on Google Play and App Store!', null, res.URI, 'http://www.how-old.net');
+		}
+		});	
+		
+
 	
 	},		
 	
