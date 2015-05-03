@@ -1,0 +1,99 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+	background: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;	
+    font-family:Segoe UI,CustomSegoeUI,Arial;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.orangebg{
+    background-color:#f89821;
+    background-image:linear-gradient(top, #f89821 0%, #f89821 51%);
+    background-image:-webkit-linear-gradient(top, #f89821 0%, #f89821 51%);
+    background-image:-ms-linear-gradient(top, #f89821 0%, #f89821 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #f89821),
+        color-stop(0.51, #f89821)
+    );
+    background-attachment:fixed;
+
+}
+
+
+
+
+
+
+
+/* Portrait layout (default) */
+
+.header{
+	height:75px;
+
+
+
+}
+
+.header img{
+	padding:0px 10px;
+}
+
+.menu {
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.buttons{
+  width: 100%;
+  font-size: 65px;
+height: 60px;
+  text-align: center;
+
+}
+
+
+.camera-btn{
+  display: block;
+  margin-top: 6px;
+  width: 77px;
+  margin: 0 auto;
+  margin-top: 6px;
+color: #f8e8a3;
+  background-color: #e06826;
+  border-radius: 5px;  
+  
+
+}
+
+.app {	
+
+
+	
+	
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+
+    }
+}

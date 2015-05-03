@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+        <title>How Old</title>
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		
+    </head>
+    <body>
+		<div class="header orangebg">
+			<img src="img/header.png">
+		</div>
+		
+
+		
+		<div class="menu orangebg">
+			<div class="buttons">
+				<i onclick="app.capturePhoto();" style="display: block;" class="camera-btn fa fa-camera-retro"></i>
+			</div>
+		</div>
+		
+		
+		<form style="display:block;" id="uploadImageForm" action="script.php" method="post" enctype="multipart/form-data">
+			Select image to upload:
+			<input type="file" name="fileToUpload" id="fileToUpload">
+			<input type="submit" value="Upload Image" name="submit">
+		</form>		
+		
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
