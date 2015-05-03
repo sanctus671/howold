@@ -31,10 +31,10 @@ var app = {
 	useGetPicture: function() {
 		navigator.camera.getPicture(
 			app.onPhotoSuccess,
-			app.onFail,
+			function(message){alert('Failed: ' + message);},
 			{
 				quality: 75,
-				destinationType: Camera.DestinationType.DATA_URL,
+				destinationType: Camera.DestinationType.FILE_URI,
 				sourceType: Camera.PictureSourceType.Camera,
 				encodingType: Camera.EncodingType.JPEG,
 				correctOrientation: true
@@ -47,16 +47,39 @@ var app = {
 	
 	},
 	
-	onPhotoSuccess: function(imageData) {
+	onPhotoSuccess: function(imageURI) {
 		var image = document.getElementById('image');
-		image.src = "data:image/jpeg;base64," + imageData;
-	
-	},
-	
-	onFail: function(message){
-		alert('Failed: ' + message);
+		image.src = imageURI;
+		var options = new FileUploadOptions();
+		options.fileKey="fileToUpload";
+		options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+		options.mimeType="image/jpeg";
+
+		var params = new Object();
+		params.value1 = "test";
+		params.value2 = "param";
+
+		options.params = params;
+		options.chunkedMode = false;
+
+		var ft = new FileTransfer();
+		ft.upload(imageURI, "http://www.taylorhamling.com/script.php", app.win,  app.fail, options);		
 		
+		
+	
 	},
+	
+	win: function(r){
+		alert(r.response);
+	
+	},
+	
+	fail: function(error){
+		alert(error.code);
+	
+	},
+	
+
 	
 	
 
