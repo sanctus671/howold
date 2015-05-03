@@ -58,7 +58,7 @@ var app = {
 	win: function(r){
 		//alert("Response =" + r.response);
 		//send away to microsoft
-		alert('"http://taylorhamling.com/HowOld/' + r.url + '"');
+		alert('"http://taylorhamling.com/HowOld/' + r.response.url + '"');
 		$(function() {
 			var params = {
 				// Specify your subscription key
@@ -74,7 +74,7 @@ var app = {
 				url: 'https://api.projectoxford.ai/face/v0/detections?' + $.param(params),
 				type: 'POST',
 				contentType: 'application/json',
-				data: '{url:"http://taylorhamling.com/HowOld/' + r.url + '"}'
+				data: '{url:"http://taylorhamling.com/HowOld/' + r.response.url + '"}'
 			})
 			.done(function(data) {
 				console.log(data);
