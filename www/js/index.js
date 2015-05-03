@@ -81,7 +81,8 @@ var app = {
 			.done(function(data) {
 				console.log(data);
 				for (var index in data){
-					alert("You are a " + data[index]["attributes"]["gender"] + " who is " + data[index]["attributes"]["age"] + " years old")
+					alert("You are a " + data[index]["attributes"]["gender"] + " who is " + data[index]["attributes"]["age"] + " years old");
+					$('body').append('<div class="box" style="width:' + data[index]["faceRectangle"]["width"] + 'px; height:' + data[index]["faceRectangle"]["height"] + 'px; top:' + data[index]["faceRectangle"]["top"] + 'px; left:' + data[index]["faceRectangle"]["left"] + 'px;"></div>')
 				}
 				//update background image
 				//create squares on image

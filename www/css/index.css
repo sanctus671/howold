@@ -93,6 +93,17 @@ color: #f8e8a3;
 
 }
 
+.box{
+  width: 0px;
+  height: 0px;
+  border: solid 1px white;
+  position: absolute;
+  z-index: 99999;
+  top: 0px;
+  left: 0px;
+
+}
+
 .app {	
 
 
