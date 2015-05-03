@@ -151,6 +151,20 @@ color: #e06826;
   
 }
 
+#image{
+	z-index:2;
+	
+
+}
+
+.welcome{
+text-align: center;
+  margin-top: 100px;
+  width: 100%;
+z-index:-1;
+  position: absolute;
+}
+
 .app {	
 
 
