@@ -131,6 +131,7 @@ var app = {
 				});
 			})
 			.fail(function() {
+				alert("No faces detected");
 				//still clean up
 				$.ajax({
 					url: 'http://www.taylorhamling.com/HowOld/delete.php',
