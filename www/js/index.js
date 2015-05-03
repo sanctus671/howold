@@ -56,8 +56,9 @@ var app = {
 	},
 	
 	win: function(r){
-		alert("Response =" + r.response);
+		//alert("Response =" + r.response);
 		//send away to microsoft
+		alert('"http://taylorhamling.com/HowOld/' + r.url + '"');
 		$(function() {
 			var params = {
 				// Specify your subscription key
