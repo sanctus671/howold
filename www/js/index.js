@@ -55,8 +55,6 @@ var app = {
 		options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
 		options.mimeType="image/jpeg";
 
-		options.params = params;
-
 		var ft = new FileTransfer();
 		ft.upload(imageURI, encodeURI("http://www.taylorhamling.com/script.php"), app.win,  app.fail, options);		
 		
