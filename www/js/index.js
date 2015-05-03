@@ -20,7 +20,30 @@ var app = {
 		
 		
     },
+
+	sharePicture: function() {
+		alert('Function not implemented');
 	
+	},		
+	
+	useGetFile: function() {
+		navigator.camera.getPicture(
+			app.onPhotoSuccess,
+			function(message){alert('Failed: ' + message);},
+			{
+				quality: 75,
+				destinationType: Camera.DestinationType.FILE_URI,
+				sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+				encodingType: Camera.EncodingType.JPEG,
+				correctOrientation: true
+			
+			
+			}
+		
+		
+		)
+	
+	},	
 	useGetPicture: function() {
 		navigator.camera.getPicture(
 			app.onPhotoSuccess,

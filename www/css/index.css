@@ -81,6 +81,40 @@ color: #f8e8a3;
 
 }
 
+.file-btn{
+  display: block;
+  width: 33%;
+  margin: 0 auto;
+
+color: #e06826;
+
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  font-size: 60px;
+
+ 
+  
+
+}
+
+.share-btn{
+  display: block;
+  width: 33%;
+  margin: 0 auto;
+
+color: #e06826;
+
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  font-size: 70px;
+
+ 
+  
+
+}
+
 .main{
 
   background-color: #f8e8a3;
@@ -112,6 +146,7 @@ color: #f8e8a3;
   border-radius: 2px;
   margin-left: 5px;
   margin-top: 5px;	
+  display:table;
   
 }
 
