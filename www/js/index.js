@@ -72,6 +72,8 @@ var app = {
 	},
 	
 	onPhotoSuccess: function(imageURI) {
+		$('.welcome').hide();
+		$('.loader').show();
 		var image = document.getElementById('image');
 		image.src = imageURI;
 		$('.box').remove();
@@ -120,17 +122,19 @@ var app = {
 				var scaleWidthFactor = scaledWidth/imageWidth;	
 				
 				if (data.length < 1){
-					alert("No faces detected");
+					alert("No faces detected. Please try again.");
 				}
 				
 				for (var index in data){
-					alert("You are a " + data[index]["attributes"]["gender"] + " who is " + data[index]["attributes"]["age"] + " years old");
-					$('body').append('<div class="box" style="width:' + data[index]["faceRectangle"]["width"]*scaleWidthFactor + 'px; height:' + data[index]["faceRectangle"]["height"]*scaleHeightFactor + 'px; top:' + data[index]["faceRectangle"]["top"]*scaleHeightFactor + 'px; left:' + data[index]["faceRectangle"]["left"]*scaleWidthFactor + 'px;">' +
+					//alert("You are a " + data[index]["attributes"]["gender"] + " who is " + data[index]["attributes"]["age"] + " years old");
+					$('body').append('<div class="box" style="display:none; width:' + data[index]["faceRectangle"]["width"]*scaleWidthFactor + 'px; height:' + data[index]["faceRectangle"]["height"]*scaleHeightFactor + 'px; top:' + data[index]["faceRectangle"]["top"]*scaleHeightFactor + 'px; left:' + data[index]["faceRectangle"]["left"]*scaleWidthFactor + 'px;">' +
 					'<i class="attributes fa fa-' + data[index]["attributes"]["gender"] + '"></i>' +
 					'<div class="attributes age">' + data[index]["attributes"]["age"] + '</div>' +
 					'</div>');
 
 				}
+				$('.box').fadeIn();
+				$('.loader').hide();
 				//clean up
 				$.ajax({
 					url: 'http://www.taylorhamling.com/HowOld/delete.php',
@@ -139,7 +143,8 @@ var app = {
 				});
 			})
 			.fail(function() {
-				alert("No faces detected");
+				$('.loader').hide();
+				alert("No faces detected. Please try again.");
 				//still clean up
 				$.ajax({
 					url: 'http://www.taylorhamling.com/HowOld/delete.php',
@@ -154,7 +159,8 @@ var app = {
 	},
 	
 	fail: function(error){
-		alert("An error has occurred: Code = " + error.code);
+		$('.loader').hide();
+		alert("There was an error. Please try again.");
 	
 	}
 	

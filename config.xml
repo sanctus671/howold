@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.howold" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>How Old</name>
+<widget id="com.agegauge" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Age Gauge</name>
     <description>
-        How Old Do I Look?
+        Determine your age by taking a picture and letting an intelligent machine be the judge.
     </description>
     <author email="taylor@taylorhamling.com" href="http://www.taylorhamling.com">
 		Taylor Hamling

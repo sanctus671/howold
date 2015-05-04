@@ -15,15 +15,15 @@ body {
 }
 
 .orangebg{
-    background-color:#f89821;
-    background-image:linear-gradient(top, #f89821 0%, #f89821 51%);
-    background-image:-webkit-linear-gradient(top, #f89821 0%, #f89821 51%);
-    background-image:-ms-linear-gradient(top, #f89821 0%, #f89821 51%);
+    background-color:#FF9716;
+    background-image:linear-gradient(top, #FF9716 0%, #f89821 51%);
+    background-image:-webkit-linear-gradient(top, #FF9716 0%, #f89821 51%);
+    background-image:-ms-linear-gradient(top, #FF9716 0%, #f89821 51%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #f89821),
+        color-stop(0, #FF9716),
         color-stop(0.51, #f89821)
     );
     background-attachment:fixed;
@@ -41,6 +41,8 @@ body {
 .header{
 	height:75px;
 	  box-shadow: 0px 2px 5px #3F3F3F;
+	  position: fixed;
+	  width:100%;
 
 
 }
@@ -53,7 +55,7 @@ body {
 
   height: 75px;
 box-shadow:0px -2px 5px #3F3F3F;  
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -74,8 +76,8 @@ height: 100%;
   width: 33%;
   margin: 0 auto;
 
-color: #f8e8a3;
-  background-color: #e06826;
+color: #FFF2B9;
+  background-color: #954113;
  
   
 
@@ -86,7 +88,7 @@ color: #f8e8a3;
   width: 33%;
   margin: 0 auto;
 
-color: #e06826;
+color: #954113;
 
   position: absolute;
   top: 10px;
@@ -103,7 +105,7 @@ color: #e06826;
   width: 33%;
   margin: 0 auto;
 
-color: #e06826;
+color: #954113;
 
   position: absolute;
   top: 5px;
@@ -117,7 +119,7 @@ color: #e06826;
 
 .main{
 
-  background-color: #f8e8a3;
+  background-color: #FFF2B9;
   position: absolute;
   height: 100vh;
   width: 100%;
@@ -161,8 +163,20 @@ color: #e06826;
 text-align: center;
   margin-top: 100px;
   width: 100%;
-z-index:-1;
+z-index:1;
   position: absolute;
+  background-color: #FFF2B9;
+    padding-bottom: 100px;
+}
+
+.loader{
+display:none;
+position: absolute;
+  top: 35%;
+  text-align: center;
+  width:100%;
+  z-index:3;
+
 }
 
 .app {	
