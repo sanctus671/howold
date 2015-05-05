@@ -166,7 +166,6 @@ var app = {
 	
 	fail: function(error){
 		$('.loader').hide();
-		alert(error.msg
 		alert("There was an error. Please try again.");
 	
 	}
