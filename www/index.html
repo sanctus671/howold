@@ -13,17 +13,42 @@
 		
         <title>Age Gauge</title>
 		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/spin.min.js"></script>
 		
     </head>
     <body>
 		<div class="header orangebg">
+			
 			<img src="img/header.png">
+			<div class="header-text">
+				<div class="header-title">Age Gauge</div>
+				<div class="header-subtitle">How old do you really look?</div>
+			</div>
 		</div>
 		<div class="main">
-			<div class="welcome">
-				<img src="img/tutorial.png"/>
+			<div class="welcome" onclick="app.useGetPicture();">
+				<div class="begin pulse animated">Touch to begin</div>
+				<div class="step1">
+					
+					<div class="circle fa fa-circle" style="color:#FF9716;"></div>
+					<i  class="step-icon fa fa-camera-retro " style="color:#954113;"></i>
+					<div class="step-text">1. Take a photo</div>
+				</div>
+				<div class="step2">
+					
+					<div class="circle fa fa-circle" style="color:#E06826"></div>
+					<i class="step-icon fa fa-cogs" style="color:#FFF2B9;"></i>
+					<div class="step-text">2. Age Gauge determines your age</div>
+				</div>
+				<div class="step3">
+					
+					<div class="circle fa fa-circle" style="color:#954113;"></div>
+					<i class="step-icon fa fa-share-alt" style="color:#FF9716;"></i>
+					<div class="step-text">3. Share with friends and family!</div>
+				</div>
+			
+				
 			</div>
-			<div class="loader"><img src="img/loader.gif"></div>
 			<img id="image" height="100%" width="100%"/>
 		</div>
 		
@@ -42,6 +67,35 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+			
+			function tutorial(){
+				$('.step1').fadeIn();
+				$('.step1').addClass('animation-target');
+				setTimeout(function(){
+					$.when($('.step1').fadeOut()).done(function(){
+						$('.step1').removeClass('animation-target');
+						setTimeout(function(){$('.step2').fadeIn();
+							$('.step2').addClass('animation-target');	
+							setTimeout(function(){
+								$.when($('.step2').fadeOut()).done(function(){
+								$('.step2').removeClass('animation-target');
+								setTimeout(function(){$('.step3').fadeIn();
+									$('.step3').addClass('animation-target');
+									setTimeout(function(){
+										$.when($('.step3').fadeOut()).done(function(){
+											$('.step3').removeClass('animation-target');	
+											setTimeout(function(){tutorial();},250);
+										});
+									}, 3000)
+								},250);
+								})
+							},3000);
+						},250);
+					})
+				},3000);
+			}
+			
+			tutorial();
         </script>
     </body>
 </html>
