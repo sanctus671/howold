@@ -205,13 +205,19 @@ color: #954113;
 }
 
 .welcome{
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  min-height: 300px;
+
+
 text-align: center;
-  margin-top: 100px;
   width: 100%;
 z-index:1;
   position: absolute;
 
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 .begin{
