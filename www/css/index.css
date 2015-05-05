@@ -53,8 +53,9 @@ body {
 
 .header-text{
   position: absolute;
-  top: 4px;
-left: 85px;
+  top: 0px;
+  left: 90px;
+  height: 100%;
 
 }
 
@@ -66,7 +67,7 @@ left: 85px;
 
 .header-subtitle{
 font-size: 12px;
-  margin-top: -1px;
+  margin-top: 3px;
   text-transform: uppercase;
   color:#954113;
 }
