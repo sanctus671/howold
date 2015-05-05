@@ -83,6 +83,14 @@ color: #FFF2B9;
 
 }
 
+.camera-btn:active{
+
+  background-color: #A34E1F;
+ 
+  
+
+}
+
 .file-btn{
   display: block;
   width: 33%;
@@ -94,6 +102,14 @@ color: #954113;
   top: 10px;
   right: 0px;
   font-size: 60px;
+
+ 
+  
+
+}
+
+.file-btn:active{
+  color:#A34E1F
 
  
   
@@ -116,6 +132,13 @@ color: #954113;
   
 
 }
+
+
+.share-btn:active{
+  color:#A34E1F
+
+}
+
 
 .main{
 
