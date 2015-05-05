@@ -39,7 +39,7 @@ var app = {
 			app.onPhotoSuccess,
 			function(message){/*alert('Failed: ' + message);*/},
 			{
-				quality: 75,
+				quality: 25,
 				destinationType: Camera.DestinationType.FILE_URI,
 				sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
 				encodingType: Camera.EncodingType.JPEG,
@@ -57,11 +57,12 @@ var app = {
 			app.onPhotoSuccess,
 			function(message){/*alert('Failed: ' + message);*/},
 			{
-				quality: 75,
+				quality: 25,
 				destinationType: Camera.DestinationType.FILE_URI,
 				sourceType: Camera.PictureSourceType.Camera,
 				encodingType: Camera.EncodingType.JPEG,
-				correctOrientation: true
+				correctOrientation: true,
+				cameraDirection: Camera.Direction.BACK
 			
 			
 			}
