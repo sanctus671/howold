@@ -22,15 +22,22 @@ var app = {
     },
 
 	sharePicture: function() {
-		navigator.screenshot.save(function(error,res){
-		if(error){
-			alert("There was an error");
-		}else{
-			window.plugins.socialsharing.share('Shared from the How Old app on Google Play and App Store!', null, res.URI, 'http://www.how-old.net');
-		}
-		});	
 		
+		 var imageLink;
+		//console.log('Calling from CapturePhoto');
+		navigator.screenshot.save(function(error,res){
+			if(error){
+				console.error(error);
+			}else{
+				console.log('ok',res.filePath); //should be path/to/myScreenshot.jpg
+				//For android
+				imageLink = res.filePath;
+				window.plugins.socialsharing.share(null, null,'file://'+imageLink, null);
 
+				//For iOS
+				//window.plugins.socialsharing.share(null,   null,imageLink, null)
+			}
+		 },'jpg',50,'myScreenShot');
 	
 	},		
 	
@@ -40,7 +47,6 @@ var app = {
 			function(message){/*alert('Failed: ' + message);*/},
 			{
 				quality: 25,
-				destinationType: Camera.DestinationType.FILE_URI,
 				sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
 				encodingType: Camera.EncodingType.JPEG,
 				correctOrientation: true
@@ -58,11 +64,10 @@ var app = {
 			function(message){/*alert('Failed: ' + message);*/},
 			{
 				quality: 25,
-				destinationType: Camera.DestinationType.FILE_URI,
 				sourceType: Camera.PictureSourceType.Camera,
 				encodingType: Camera.EncodingType.JPEG,
 				correctOrientation: true,
-				cameraDirection: Camera.Direction.BACK
+				cameraDirection: Camera.Direction.FRONT
 			
 			
 			}
@@ -161,6 +166,7 @@ var app = {
 	
 	fail: function(error){
 		$('.loader').hide();
+		alert(error.msg
 		alert("There was an error. Please try again.");
 	
 	}
