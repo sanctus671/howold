@@ -164,25 +164,25 @@ var app = {
 				$('.box').fadeIn();
 				spinner.stop();
 				//clean up
-				/*
+				
 				$.ajax({
 					url: 'http://www.taylorhamling.com/HowOld/delete.php',
 					type: 'POST',
 					data: {url:response.url}
 				});
-				*/
+				
 			})
 			.fail(function() {
 				spinner.stop();
 				alert("No faces detected. Please try again.");
 				//still clean up
-				/*
+				
 				$.ajax({
 					url: 'http://www.taylorhamling.com/HowOld/delete.php',
 					type: 'POST',
 					data: {url:response.url}
 				});
-				*/
+				
 			});
 		});			
 		
