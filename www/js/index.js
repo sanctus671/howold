@@ -125,7 +125,8 @@ var app = {
 		$(function() {
 			var params = {
 				// Specify your subscription key
-				'subscription-key': '1e5ea185c56f4c9fbe3204031489417d',
+				'subscription-key': '6ebdc952faa244ed8118a18a21fe2dae',
+				
 				// Specify values for optional parameters, as needed
 				// analyzesFaceLandmarks: "false",
 				 analyzesAge: "true",
